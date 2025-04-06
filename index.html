@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liệu Pháp Chữa Bệnh Khu Phản Xạ - Ưu Đãi Đặc Biệt</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #f97316;
+            --accent-color: #f43f5e;
+            --bg-color: #f9fafb;
+            --text-color: #1f2937;
+            --light-color: #f3f4f6;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header & Navigation */
+        .header {
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ebf4ff 0%, #e0f2fe 100%);
+            padding: 7rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(249, 115, 22, 0.1);
+            top: -150px;
+            right: -100px;
+            z-index: 0;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            transform: rotate(-2deg);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.5);
+            text-decoration: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e11d48;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+            text-decoration: none;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.2);
+        }
+        
+        .price {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            color: #6b7280;
+            font-size: 1.5rem;
+        }
+        
+        .discount-label {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-weight: bold;
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+        
+        /* Book Features */
+        .features {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            background-color: rgba(79, 70, 229, 0.1);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Book Details */
+        .book-details {
+            background-color: #f3f4f6;
+            padding: 4rem 0;
+        }
+        
+        .book-image {
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .book-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Timer Section */
+        .timer {
+            background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .countdown-item {
+            background-color: white;
+            color: var(--text-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            min-width: 5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .countdown-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        /* Usage Instructions */
+        .instructions {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .instruction-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: #f3f4f6;
+            padding: 4rem 0;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            position: relative;
+            height: 100%;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            color: #e5e7eb;
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            object-fit: cover;
+        }
+        
+        /* Guarantees */
+        .guarantees {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .guarantee-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .guarantee-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background-color: #f3f4f6;
+            padding: 4rem 0;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1.5rem 0;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            margin-top: 1rem;
+            color: #6b7280;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        /* Order Form */
+        .order-form {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #ebf4ff 0%, #e0f2fe 100%);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: #10b981;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 1rem;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-link {
+                padding: 0.75rem 0;
+            }
+            
+            .countdown {
+                flex-wrap: wrap;
+            }
+        }
+        
+        /* Floating Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-btn:hover {
+            background-color: #e11d48;
+            transform: scale(1.1);
+        }
+        
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-primary-600">
+                        <i class="fas fa-book-medical mr-2 text-accent-color"></i>
+                        Liệu Pháp Chữa Bệnh
+                    </h1>
+                </div>
+                
+                <button class="mobile-menu-btn focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                
+                <nav class="nav-links">
+                    <a href="#gioi-thieu" class="nav-link mx-4">Giới thiệu</a>
+                    <a href="#sach" class="nav-link mx-4">Sách</a>
+                    <a href="#huong-dan" class="nav-link mx-4">Hướng dẫn</a>
+                    <a href="#danh-gia" class="nav-link mx-4">Đánh giá</a>
+                    <a href="#dat-hang" class="nav-link mx-4">Đặt hàng</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="gioi-thieu">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="fade-in">
+                    <div class="hero-badge">
+                        <i class="fas fa-fire-alt mr-1"></i> Khuyến mãi đặc biệt
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Liệu Pháp Chữa Bệnh Khu Phản Xạ</h1>
+                    <p class="text-lg mb-6">Khám phá bí quyết chữa bệnh hiệu quả từ các phương pháp bấm huyệt và khu phản xạ đã được chứng minh qua hàng ngàn năm.</p>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-center mb-2">
+                            <span class="price">179.000₫</span>
+                            <span class="price-original ml-2">350.000₫</span>
+                            <span class="discount-label">-49%</span>
+                        </div>
+                        <p class="text-green-600 font-bold flex items-center">
+                            <i class="fas fa-truck mr-2"></i> 
+                            Miễn phí vận chuyển toàn quốc
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#dat-hang" class="btn-primary">
+                            <i class="fas fa-shopping-cart mr-2"></i> Mua ngay
+                        </a>
+                        <a href="#combo" class="btn-secondary">
+                            <i class="fas fa-gift mr-2"></i> Xem combo tiết kiệm
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <img src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935236431279.jpg" alt="Sách Liệu Pháp Chữa Bệnh Khu Phản Xạ" class="book-image mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Lợi ích khi sở hữu cuốn sách</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Tự chữa bệnh tại nhà</h3>
+                    <p>Học cách thực hành các liệu pháp chữa bệnh hiệu quả ngay tại nhà không cần thuốc hoặc thiết bị phức tạp.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Kiến thức y học cổ truyền</h3>
+                    <p>Tiếp cận với kho tàng kiến thức quý báu về y học cổ truyền đã được chứng minh qua hàng ngàn năm.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Nâng cao sức khỏe</h3>
+                    <p>Cải thiện sức khỏe tổng thể, tăng cường hệ miễn dịch và đạt được sự cân bằng cho cơ thể.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combo Offer -->
+    <section class="book-details py-16 bg-gradient-to-r from-purple-100 to-indigo-100" id="combo">
+        <div class="container">
+            <div class="text-center mb-12 fade-in">
+                <span class="bg-accent-color text-white px-4 py-1 rounded-full text-sm font-bold">TIẾT KIỆM 250.000₫</span>
+                <h2 class="text-3xl font-bold mt-4">Combo 2 cuốn sách chỉ 299.000₫</h2>
+                <p class="text-lg mt-2">Mua combo và tiết kiệm tới 45% so với mua lẻ</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="fade-in">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935236431279.jpg" alt="Liệu Pháp Chữa Bệnh Khu Phản Xạ" class="book-image">
+                        <img src="https://cdn1.fahasa.com/media/catalog/product/8/9/8935086855492.jpg" alt="Bí Quyết Bấm Huyệt Chữa Bệnh" class="book-image">
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-4">Combo sách chữa bệnh toàn diện</h3>
+                    <ul class="mb-6 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Liệu Pháp Chữa Bệnh Khu Phản Xạ</strong>: Khám phá các điểm phản xạ trên cơ thể và phương pháp kích thích để chữa bệnh.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Bí Quyết Bấm Huyệt Chữa Bệnh</strong>: Hướng dẫn chi tiết về vị trí các huyệt đạo và cách bấm huyệt hiệu quả.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-shipping-fast text-blue-500 mt-1 mr-2"></i>
+                            <span><strong>Miễn phí vận chuyển</strong> toàn quốc.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-gift text-purple-500 mt-1 mr-2"></i>
+                            <span><strong>Tặng kèm</strong> hướng dẫn thực hành kỹ thuật bấm huyệt cơ bản.</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="flex items-center mb-6">
+                        <span class="price">299.000₫</span>
+                        <span class="price-original ml-2">549.000₫</span>
+                        <span class="discount-label">-45%</span>
+                    </div>
+                    
+                    <a href="#dat-hang" class="btn-primary">
+                        <i class="fas fa-shopping-cart mr-2"></i> Mua combo ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Details -->
+    <section class="book-details" id="sach">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Thông tin chi tiết về sách</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                <div class="fade-in">
+                    <img src="https://cdn1.fahasa.com/media/flashmagazine/images/page_images/lieu_phap_chua_benh_toan_than___khu_phan_xa/2024_11_04_16_31_50_7-390x510.jpg" alt="Liệu Pháp Chữa Bệnh Khu Phản Xạ - Hình ảnh nội dung" class="book-image mb-6">
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-4">Liệu Pháp Chữa Bệnh Khu Phản Xạ</h3>
+                    <p class="mb-4">Cuốn sách cung cấp kiến thức toàn diện về khu phản xạ - phương pháp chữa bệnh tự nhiên đã được chứng minh hiệu quả qua hàng ngàn năm.</p>
+                    
+                    <h4 class="text-xl font-semibold mb-2">Nội dung chính:</h4>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Nguyên lý của liệu pháp khu phản xạ và cơ chế hoạt động</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Bản đồ chi tiết các điểm phản xạ trên bàn chân, bàn tay, và tai</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Hướng dẫn kỹ thuật massage các điểm phản xạ</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Phương pháp điều trị cụ thể cho hơn 100 vấn đề sức khỏe thường gặp</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Hình ảnh minh họa chi tiết và dễ hiểu</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="flex items-center mb-6">
+                        <span class="price">179.000₫</span>
+                        <span class="price-original ml-2">350.000₫</span>
+                        <span class="discount-label">-49%</span>
+                    </div>
+                    
+                    <a href="#dat-hang" class="btn-primary">
+                        <i class="fas fa-shopping-cart mr-2"></i> Mua ngay
+                    </a>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-4">Bí Quyết Bấm Huyệt Chữa Bệnh</h3>
+                    <p class="mb-4">Cuốn sách trình bày các phương pháp bấm huyệt cổ truyền Đông y, giúp bạn tự chữa bệnh và cải thiện sức khỏe một cách hiệu quả.</p>
+                    
+                    <h4 class="text-xl font-semibold mb-2">Nội dung chính:</h4>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Lý thuyết về hệ thống kinh lạc trong Đông y</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Vị trí chi tiết của hơn 200 huyệt đạo quan trọng</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Kỹ thuật bấm huyệt chuẩn xác và an toàn</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Phương pháp điều trị cho các bệnh thường gặp</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Hình ảnh minh họa rõ ràng và hướng dẫn thực hành</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="flex items-center mb-6">
+                        <span class="price">199.000₫</span>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <img src="https://cdn1.fahasa.com/media/catalog/product/8/9/8935086855492.jpg" alt="Bí Quyết Bấm Huyệt Chữa Bệnh" class="book-image mb-6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section class="timer">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-center mb-4 fade-in">Khuyến mãi đặc biệt có hạn</h2>
+            <p class="text-center text-lg mb-6 fade-in">Nhanh tay đặt hàng trước khi chương trình kết thúc!</p>
+            
+            <div class="countdown fade-in" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Ngày</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Giờ</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Phút</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Giây</div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center fade-in">
+                <a href="#dat-hang" class="btn-primary">
+                    <i class="fas fa-shopping-cart mr-2"></i> Mua ngay
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Instructions -->
+    <section class="instructions" id="huong-dan">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Hướng dẫn cách sử dụng sách</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6">Cách thực hành khu phản xạ cơ bản</h3>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">Tìm hiểu bản đồ khu phản xạ</h4>
+                            <p>Nghiên cứu kỹ các bản đồ khu phản xạ trên bàn chân, bàn tay và tai để hiểu rõ vị trí tương ứng với các cơ quan trong cơ thể.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">Chuẩn bị không gian và dụng cụ</h4>
+                            <p>Chọn không gian yên tĩnh, thoải mái. Có thể sử dụng dầu massage hoặc kem dưỡng để giảm ma sát.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">Thực hành kỹ thuật xoa bóp</h4>
+                            <p>Áp dụng các kỹ thuật xoa bóp được hướng dẫn trong sách, đảm bảo sử dụng lực vừa phải và tập trung vào các điểm phản xạ cụ thể.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">Theo dõi phản ứng của cơ thể</h4>
+                            <p>Ghi nhận các thay đổi về sức khỏe sau khi thực hành và điều chỉnh phương pháp cho phù hợp.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6">Kỹ thuật bấm huyệt cơ bản</h3>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">Xác định vị trí huyệt đạo</h4>
+                            <p>Sử dụng hình ảnh minh họa trong sách để xác định chính xác vị trí các huyệt đạo cần tác động.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">Tư thế và tâm trạng</h4>
+                            <p>Giữ tư thế thoải mái và thư giãn, tập trung tinh thần khi thực hiện bấm huyệt.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">Kỹ thuật bấm huyệt đúng cách</h4>
+                            <p>Sử dụng đầu ngón tay cái hoặc ngón trỏ để tác động lên huyệt đạo với lực vừa phải, nhịp nhàng.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">Thời gian và tần suất</h4>
+                            <p>Mỗi lần bấm huyệt từ 1-3 phút cho mỗi huyệt, thực hiện 1-2 lần/ngày hoặc theo hướng dẫn cụ thể trong sách.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center fade-in">
+                <p class="text-lg mb-6">Sách cung cấp hướng dẫn chi tiết và đầy đủ hơn về các kỹ thuật nâng cao và trị liệu cho từng bệnh cụ thể.</p>
+                <a href="#dat-hang" class="btn-primary">
+                    <i class="fas fa-shopping-cart mr-2"></i> Mua sách ngay
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="danh-gia">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Phản hồi từ độc giả</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card fade-in">
+                    <p class="mb-4">Tôi đã áp dụng phương pháp khu phản xạ theo hướng dẫn trong sách và thấy tình trạng đau lưng mãn tính giảm đáng kể sau 2 tuần. Cách trình bày trong sách rất dễ hiểu với người mới.</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Nguyễn Thị Minh" class="avatar mr-3">
+                        <div>
+                            <h4 class="font-bold">Nguyễn Thị Minh</h4>
+                            <p class="text-sm text-gray-600">TP. Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="mb-4">Combo hai cuốn sách này là một kho báu về y học cổ truyền. Tôi đã áp dụng kỹ thuật bấm huyệt để cải thiện giấc ngủ và kết quả thật đáng kinh ngạc. Đây là khoản đầu tư tuyệt vời cho sức khỏe.</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Trần Văn Hùng" class="avatar mr-3">
+                        <div>
+                            <h4 class="font-bold">Trần Văn Hùng</h4>
+                            <p class="text-sm text-gray-600">Hà Nội</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="mb-4">Sách có hình ảnh minh họa rất chi tiết, giúp tôi dễ dàng tìm các điểm bấm huyệt chính xác. Sau 1 tháng áp dụng, tình trạng đau đầu của tôi đã giảm hẳn. Rất đáng để mua!</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lê Thị Hương" class="avatar mr-3">
+                        <div>
+                            <h4 class="font-bold">Lê Thị Hương</h4>
+                            <p class="text-sm text-gray-600">Đà Nẵng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantees -->
+    <section class="guarantees">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Cam kết từ nhà phát hành</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="guarantee-card fade-in">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-medal text-4xl text-primary-color"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-2">Chất lượng đảm bảo</h3>
+                    <p class="text-center">Sách được in ấn trên giấy chất lượng cao, hình ảnh rõ nét và nội dung được biên soạn cẩn thận bởi các chuyên gia y học.</p>
+                </div>
+                
+                <div class="guarantee-card fade-in">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-exchange-alt text-4xl text-primary-color"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-2">Đổi trả trong 7 ngày</h3>
+                    <p class="text-center">Nếu sách có lỗi từ nhà sản xuất hoặc không đúng như mô tả, chúng tôi cam kết đổi trả miễn phí trong vòng 7 ngày.</p>
+                </div>
+                
+                <div class="guarantee-card fade-in">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-shipping-fast text-4xl text-primary-color"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-2">Giao hàng nhanh chóng</h3>
+                    <p class="text-center">Đơn hàng được xử lý trong vòng 24 giờ và giao đến tận nhà bạn trong thời gian nhanh nhất có thể.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Câu hỏi thường gặp</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Liệu pháp khu phản xạ có an toàn không?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Liệu pháp khu phản xạ là phương pháp điều trị tự nhiên và không xâm lấn, nên rất an toàn khi thực hiện đúng kỹ thuật. Tuy nhiên, một số trường hợp như phụ nữ mang thai, người bị viêm tĩnh mạch, hoặc có vết thương hở tại vùng điều trị nên tham khảo ý kiến bác sĩ trước khi áp dụng.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Tôi có thể áp dụng những phương pháp này nếu đang điều trị y khoa không?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Liệu pháp khu phản xạ và bấm huyệt có thể được sử dụng như liệu pháp bổ trợ cùng với điều trị y khoa hiện đại. Tuy nhiên, bạn nên thông báo cho bác sĩ điều trị của mình về việc áp dụng các phương pháp này và không nên tự ý ngừng các liệu pháp y khoa đang thực hiện.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Mất bao lâu để thấy hiệu quả khi thực hành các phương pháp trong sách?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Thời gian để thấy hiệu quả phụ thuộc vào tình trạng sức khỏe cụ thể và mức độ thực hành đều đặn. Một số người có thể cảm nhận sự cải thiện ngay sau buổi đầu tiên, trong khi những vấn đề mãn tính có thể cần 2-3 tuần thực hành đều đặn để thấy kết quả rõ rệt.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Sách có phù hợp cho người mới bắt đầu không?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cả hai cuốn sách đều được biên soạn với ngôn ngữ dễ hiểu và hình ảnh minh họa chi tiết, phù hợp cho cả người mới bắt đầu. Sách hướng dẫn từng bước một cách rõ ràng, từ cơ bản đến nâng cao, giúp người đọc dễ dàng tiếp cận và thực hành.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Làm thế nào để nhận được sách nhanh nhất?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sau khi đặt hàng, đơn hàng của bạn sẽ được xử lý trong vòng 24 giờ. Thời gian giao hàng thông thường là 2-5 ngày tùy theo khu vực. Nếu bạn cần sách gấp, vui lòng ghi chú trong phần thông tin đặt hàng hoặc liên hệ trực tiếp với chúng tôi qua số điện thoại để được hỗ trợ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="order-form" id="dat-hang">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-center mb-4 fade-in">Đặt mua sách ngay</h2>
+            <p class="text-center mb-8 fade-in">Điền thông tin của bạn để đặt hàng. Chúng tôi sẽ liên hệ xác nhận trong thời gian sớm nhất!</p>
+            
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg fade-in">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="fullName" class="form-label">Họ và tên <span class="text-red-500">*</span></label>
+                        <input type="text" id="fullName" name="fullName" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Số điện thoại <span class="text-red-500">*</span></label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required pattern="[0-9]{10}">
+                        <small class="text-gray-500">Vui lòng nhập đúng số điện thoại 10 số</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address" class="form-label">Địa chỉ giao hàng <span class="text-red-500">*</span></label>
+                        <textarea id="address" name="address" class="form-control" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Lựa chọn sách <span class="text-red-500">*</span></label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="book1" name="bookChoice" value="Liệu Pháp Chữa Bệnh Khu Phản Xạ" checked class="mr-2">
+                                <label for="book1">Liệu Pháp Chữa Bệnh Khu Phản Xạ - 179.000₫</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="book2" name="bookChoice" value="Bí Quyết Bấm Huyệt Chữa Bệnh" class="mr-2">
+                                <label for="book2">Bí Quyết Bấm Huyệt Chữa Bệnh - 199.000₫</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="combo" name="bookChoice" value="Combo 2 cuốn sách" class="mr-2">
+                                <label for="combo">Combo 2 cuốn sách - 299.000₫ (Tiết kiệm 79.000₫)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="note" class="form-label">Ghi chú thêm</label>
+                        <textarea id="note" name="note" class="form-control" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <button type="submit" class="btn-primary w-full text-center py-3">
+                            <i class="fas fa-shopping-cart mr-2"></i> Đặt hàng ngay
+                        </button>
+                    </div>
+                    
+                    <div id="successMessage" class="success-message mt-4">
+                        <i class="fas fa-check-circle mr-2"></i> Đặt hàng thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.
+                    </div>
+                    
+                    <div id="errorMessage" class="bg-red-100 text-red-700 p-4 rounded-lg mt-4 hidden">
+                        <i class="fas fa-exclamation-circle mr-2"></i> <span id="errorText"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Button -->
+    <a href="#dat-hang" class="floating-btn">
+        <i class="fas fa-shopping-cart"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Liệu Pháp Chữa Bệnh</h3>
+                    <p class="mb-4">Sách y học chất lượng cao, nâng cao sức khỏe mọi nhà</p>
+                    <div class="flex">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Liên hệ</h3>
+                    <p class="flex items-start mb-2">
+                        <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                        <span>123 Đường Sách, Quận 1, TP. Hồ Chí Minh</span>
+                    </p>
+                    <p class="flex items-start mb-2">
+                        <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                        <span>0123.456.789</span>
+                    </p>
+                    <p class="flex items-start mb-2">
+                        <i class="fas fa-envelope mt-1 mr-2"></i>
+                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="681b090b00111c0d280f05090104460b0705">[email&#160;protected]</a></span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Thông tin</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-accent-color">Chính sách đổi trả</a></li>
+                        <li><a href="#" class="hover:text-accent-color">Điều khoản sử dụng</a></li>
+                        <li><a href="#" class="hover:text-accent-color">Chính sách bảo mật</a></li>
+                        <li><a href="#" class="hover:text-accent-color">Phương thức thanh toán</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-4 border-t border-gray-700 text-center">
+                <p>&copy; 2023 Liệu Pháp Chữa Bệnh. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+            
+            // Set up countdown timer
+            const countdownDate = new Date();
+            countdownDate.setDate(countdownDate.getDate() + 7); // Set 7 days from now
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+                
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "Chương trình khuyến mãi đã kết thúc!";
+                }
+            }
+            
+            updateCountdown();
+            const x = setInterval(updateCountdown, 1000);
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // FAQ toggles
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentNode;
+                    faqItem.classList.toggle('active');
+                    
+                    const icon = this.querySelector('i');
+                    if (faqItem.classList.contains('active')) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+            
+            // Fade-in animation for elements
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            function checkFade() {
+                fadeElements.forEach(el => {
+                    const elementTop = el.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkFade);
+            checkFade(); // Check on load
+            
+            // Form submission with SheetDB
+            const form = document.getElementById('orderForm');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+            
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                
+                // Form validation
+                const fullName = document.getElementById('fullName').value;
+                const phone = document.getElementById('phone').value;
+                const address = document.getElementById('address').value;
+                
+                if (!fullName || !phone || !address) {
+                    errorText.textContent = 'Vui lòng điền đầy đủ thông tin bắt buộc!';
+                    errorMessage.classList.remove('hidden');
+                    return;
+                }
+                
+                if (!/^\d{10}$/.test(phone)) {
+                    errorText.textContent = 'Số điện thoại phải có 10 chữ số!';
+                    errorMessage.classList.remove('hidden');
+                    return;
+                }
+                
+                errorMessage.classList.add('hidden');
+                
+                // Get form data
+                const formData = {
+                    fullName: fullName,
+                    phone: phone,
+                    email: document.getElementById('email').value,
+                    address: address,
+                    bookChoice: document.querySelector('input[name="bookChoice"]:checked').value,
+                    note: document.getElementById('note').value,
+                    orderDate: new Date().toLocaleString()
+                };
+                
+                // Send data to SheetDB
+                fetch('https://sheetdb.io/api/v1/5f8rn071ysfk5', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ data: formData })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    form.reset();
+                    successMessage.style.display = 'block';
+                    
+                    // Add animation to success message
+                    successMessage.classList.add('animate__animated', 'animate__fadeIn');
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                    
+                    // Track conversion
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'purchase', {
+                            'event_category': 'ecommerce',
+                            'event_label': formData.bookChoice
+                        });
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    errorText.textContent = 'Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại sau!';
+                    errorMessage.classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
